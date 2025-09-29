@@ -1,17 +1,54 @@
 import React, { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import Header from './components/Header';
-import LoginModal from './components/LoginModal';
+import TrainingLoginModal from './components/TrainingLoginModal';
 import MenuDropdown from './components/MenuDropdown';
 import ProfileCarousel from './components/ProfileCarousel';
+import SecurityBanner from './components/SecurityBanner';
+import TrainingModal from './components/TrainingModal';
 
 function App() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTrainingModalOpen, setIsTrainingModalOpen] = useState(false);
+  const [submissionData, setSubmissionData] = useState<{
+    timestamp: string;
+    demoId: string;
+  } | null>(null);
+
+  const handleFormSubmission = (data: any) => {
+    // Generate demo ID and timestamp for training purposes
+    const demoId = 'DEMO_' + Math.random().toString(36).substr(2, 9).toUpperCase();
+    const timestamp = new Date().toISOString();
+    
+    // Log training data (no real credentials stored)
+    const trainingData = {
+      demoId,
+      timestamp,
+      submissionType: data.type,
+      // Only log that submission occurred, not actual values
+      credentialsEntered: true
+    };
+    
+    console.log('🔒 Security Training Demo - Submission Logged:', trainingData);
+    
+    // Store in localStorage for demo purposes (not real credentials)
+    const existingLogs = JSON.parse(localStorage.getItem('securityTrainingLogs') || '[]');
+    existingLogs.push(trainingData);
+    localStorage.setItem('securityTrainingLogs', JSON.stringify(existingLogs));
+    
+    setSubmissionData({ demoId, timestamp });
+    setIsEmailModalOpen(false);
+    setIsPhoneModalOpen(false);
+    setIsTrainingModalOpen(true);
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden pt-16">
+      {/* Security Training Banner */}
+      <SecurityBanner />
+      
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/40 z-10"></div>
       
@@ -78,15 +115,24 @@ function App() {
       </main>
 
       {/* Modals */}
-      <LoginModal 
+      <TrainingLoginModal 
         isOpen={isEmailModalOpen} 
         onClose={() => setIsEmailModalOpen(false)} 
         type="email"
+        onSubmit={handleFormSubmission}
       />
-      <LoginModal 
+      <TrainingLoginModal 
         isOpen={isPhoneModalOpen} 
         onClose={() => setIsPhoneModalOpen(false)} 
         type="phone"
+        onSubmit={handleFormSubmission}
+      />
+      
+      {/* Training Education Modal */}
+      <TrainingModal
+        isOpen={isTrainingModalOpen}
+        onClose={() => setIsTrainingModalOpen(false)}
+        submissionData={submissionData}
       />
       
       {/* Menu Dropdown */}
