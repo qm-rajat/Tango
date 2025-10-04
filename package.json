@@ -8,7 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "start": "node start-dev-universal.js",
+    "start:backend": "cd server && npm start",
+    "start:frontend": "npm run dev",
+    "setup:ngrok": "node setup-ngrok-simple.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

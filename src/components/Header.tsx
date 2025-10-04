@@ -1,5 +1,6 @@
 import React from 'react';
 import { Video, Trophy, Gamepad2, MoreHorizontal } from 'lucide-react';
+import TangoLogo from './TangoLogo';
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -11,12 +12,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12">
-              <div className="w-4 h-4 bg-white rounded-sm transform -rotate-12"></div>
-            </div>
-            <span className="text-white text-xl font-bold">tango</span>
-          </div>
+          <TangoLogo size={32} />
           
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">

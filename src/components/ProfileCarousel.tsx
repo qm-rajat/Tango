@@ -1,5 +1,5 @@
-import React from 'react';
 import { Users } from 'lucide-react';
+import TangoIcon from './TangoIcon';
 
 const profiles = [
   { id: 1, name: 'Ap ♥ ☆', viewers: 695, image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop' },
@@ -23,9 +23,7 @@ export default function ProfileCarousel() {
   return (
     <div className="relative w-full py-6 bg-gradient-to-t from-black/80 to-transparent">
       <div className="flex items-center space-x-2 mb-4 px-4">
-        <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-        </div>
+        <TangoIcon size={24} className="animate-pulse" />
         <span className="text-white font-semibold">Trending Now</span>
       </div>
       
