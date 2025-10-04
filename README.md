@@ -107,7 +107,7 @@ chmod +x start-dev.sh start-dev-terminal.sh
    - Enter an email address or phone number
    - Click "Continue" - the verification page should appear
    - Enter any 4-digit verification code
-   - Click "Verify Code" - the code will be displayed in the terminal and you'll be redirected to https://student-lookup-beta.vercel.app
+   - Click "Verify Code" - the code will be displayed in the terminal and you'll be redirected to another website
    - Check the backend terminal for logged data
 
 4. **Google Login:**

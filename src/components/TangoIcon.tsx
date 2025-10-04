@@ -1,5 +1,5 @@
 
-import logoImage from '../logo.jpeg';
+import logoImage from '../logo.png';
 
 interface TangoIconProps {
   size?: number;

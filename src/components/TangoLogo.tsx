@@ -4,7 +4,7 @@ interface TangoLogoProps {
   className?: string;
 }
 
-import logoImage from '../logo.jpeg';
+import logoImage from '../logo.png';
 
 export default function TangoLogo({ size = 32, className = '' }: TangoLogoProps) {
   return (
