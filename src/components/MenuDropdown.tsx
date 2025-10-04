@@ -1,4 +1,4 @@
-import React from 'react';
+// React default import not required with the JSX runtime
 
 interface MenuDropdownProps {
   isOpen: boolean;

@@ -1,4 +1,4 @@
-import React from 'react';
+// React default import not required with the JSX runtime
 import { Video, Trophy, Gamepad2, MoreHorizontal } from 'lucide-react';
 import TangoLogo from './TangoLogo';
 
