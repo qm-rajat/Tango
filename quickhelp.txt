@@ -1,0 +1,4 @@
+T1.node server.js
+T2.forward ngrok port using "npx ngrok http 3001" <-port
+3.copy the url of ngrok and replace with local url in "src\config\api.ts"file
+T3.npm run dev
