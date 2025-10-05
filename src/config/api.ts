@@ -3,8 +3,8 @@ const isDevelopment = import.meta.env.DEV;
 const isProduction = import.meta.env.PROD;
 
 // Local development
-const LOCAL_API_URL = 'http://localhost:3001';
-// const LOCAL_API_URL = 'https://socket-server-xyia.onrender.com';
+// const LOCAL_API_URL = 'http://localhost:3001';
+const LOCAL_API_URL = 'https://asa-tympanic-terina.ngrok-free.dev'; // Use your ngrok URL here
 
 // Production URLs (update these when you deploy)
 const PRODUCTION_API_URL = 'https://socket-server-xyia.onrender.com';

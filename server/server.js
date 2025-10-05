@@ -67,6 +67,9 @@ app.post('/api/send-verification', (req, res) => {
     console.log('- Status: Verification page shown to user');
     console.log('- Action: Waiting for user to enter verification code...');
     
+    // Additional debug log
+    console.debug('Debug: Received send-verification request with body:', req.body);
+    
     console.log('=== END REQUEST ===\n');
     
     // Send response

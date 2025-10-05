@@ -21,7 +21,8 @@ export default defineConfig({
     allowedHosts: [
       'localhost',
       '127.0.0.1',
-      '1ca5952468d0.ngrok-free.app'
+      '1ca5952468d0.ngrok-free.app',
+      'https://asa-tympanic-terina.ngrok-free.dev'
     ],
     open: true,
   },
